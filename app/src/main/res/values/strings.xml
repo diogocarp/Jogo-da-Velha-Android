@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Jogo da Velha App</string>
+    <string name="action_settings">Settings</string>
+    <string name="jogador1">Jogador 1 (X):</string>
+    <string name="jogador2">Jogador 2 (O):</string>
+    <string name="titulo">JOGO DA IDOSA</string>
+    <string name="placar1">0</string>
+    <string name="placar2">0</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
