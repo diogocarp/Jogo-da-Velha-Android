@@ -6,6 +6,8 @@
     <string name="titulo">JOGO DA IDOSA</string>
     <string name="placar1">0</string>
     <string name="placar2">0</string>
+    <string name="venceu">Parabéns!!! Você venceu!!!</string>
+    <string name="deuvelha">Deu Velha!!! Seus Ruins!!!!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
