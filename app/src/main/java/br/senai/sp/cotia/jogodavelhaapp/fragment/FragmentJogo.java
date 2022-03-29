@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.util.Random;
+
 import br.senai.sp.cotia.jogodavelhaapp.R;
 import br.senai.sp.cotia.jogodavelhaapp.databinding.FragmentJogoBinding;
 
@@ -22,6 +24,15 @@ public class FragmentJogo extends Fragment {
     // vetor para agrupar ps botoes
     private Button[] botoes;
 
+    // variavel que representa o tabueiro
+    private String[][] tabuleiro;
+
+    // variavel para os simbolos
+    private String simbolo, simbJog1, simbJog2;
+
+    // varivel Random para sortear quem começa
+
+    private Random random;
 
 
 
@@ -58,8 +69,39 @@ public class FragmentJogo extends Fragment {
         }
 
 
+        // inicializa tabuleiro
+        tabuleiro = new String[3][3];
+
+        // instancia o Random
+        random = new Random();
+
+        // define os simbolos dos jogadores
+        simbJog1 = "X";
+        simbJog2 = "O";
+
+        // sorteia quem inicia o jogo
+        sorteia();
+
         //retorna a view do Fragment
         return binding.getRoot();
+
+
+    }
+
+    private void sorteia(){
+        // caso o random gere um valor V, jogador 1 começa
+        // caso contrario jogador 2 começa
+        if(random.nextBoolean()){
+
+            simbolo = simbJog1;
+
+        }else{
+
+            simbolo = simbJog2;
+
+        }
+
+
 
 
     }
@@ -75,8 +117,15 @@ public class FragmentJogo extends Fragment {
         int linha = Character.getNumericValue(posicao.charAt(0));
         int coluna = Character.getNumericValue(posicao.charAt(1));
 
-        Log.w("BOTAO", linha+"");
-        Log.w("BOTAO", coluna+"");
+        // marca no tabuleiro o simbolo que foi jogado
+        tabuleiro[linha][coluna] = simbolo;
+
+        // faz um casting de View par button
+        Button botao = (Button) btPress;
+
+        // trocar o texto do botao que foi clicado
+        botao.setText(simbolo);
+
 
 
     };

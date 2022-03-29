@@ -88,19 +88,22 @@
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:id="@+id/bt00"></Button>
+                android:id="@+id/bt00"
+                android:textSize="40sp"></Button>
 
             <Button android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:id="@+id/bt01"></Button>
+                android:id="@+id/bt01"
+                android:textSize="40sp"></Button>
 
             <Button android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:id="@+id/bt02"></Button>
+                android:id="@+id/bt02"
+                android:textSize="40sp"></Button>
 
         </TableRow>
         <TableRow
@@ -112,19 +115,22 @@
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:id="@+id/bt10"></Button>
+                android:id="@+id/bt10"
+                android:textSize="40sp"></Button>
 
             <Button android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:id="@+id/bt11"></Button>
+                android:id="@+id/bt11"
+                android:textSize="40sp"></Button>
 
             <Button android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:id="@+id/bt12"></Button>
+                android:id="@+id/bt12"
+                android:textSize="40sp"></Button>
 
         </TableRow>
         <TableRow
@@ -136,24 +142,24 @@
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:id="@+id/bt20"></Button>
+                android:id="@+id/bt20"
+                android:textSize="40sp"></Button>
 
             <Button android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:id="@+id/bt21"></Button>
+                android:id="@+id/bt21"
+                android:textSize="40sp"></Button>
 
             <Button android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:id="@+id/bt22"></Button>
+                android:id="@+id/bt22"
+                android:textSize="40sp"></Button>
 
         </TableRow>
-
-
-
     </TableLayout>
 
 
