@@ -3,8 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="br.senai.sp.cotia.jogodavelhaapp.activity.MainActivity">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:id="@+id/menu_resetar"
+        android:title="@string/resetar"
+        app:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_revert"/>
+
+    <item
+        android:id="@+id/menu_inicio"
+        android:title="@string/tela_inicial"
+        app:showAsAction="always"
+
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"/>
+    <item
+        android:id="@+id/menu_preferencias"
+        android:title="@string/preferencias"
+        app:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_preferences"/>
+
 </menu>
