@@ -3,6 +3,7 @@ package br.senai.sp.cotia.jogodavelhaapp.fragment;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -27,6 +28,9 @@ public class FragmentInicio extends Fragment {
     ) {
         ;
         binding = FragmentInicioBinding.inflate(inflater, container, false);
+
+
+
         return binding.getRoot();
 
     }
@@ -42,6 +46,16 @@ public class FragmentInicio extends Fragment {
                         .navigate(R.id.action_fragmentInicio_to_fragmentJogo);
             }
         });
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // para "sumir" com a toolbar
+        // pegar uma referencia do tipo AppCompatActivity
+        AppCompatActivity minhaActivity = (AppCompatActivity) getActivity();
+
+        minhaActivity.getSupportActionBar().hide();
     }
 
     @Override

@@ -25,4 +25,9 @@ public class PrefsUtil {
         editor.putString("simb_jog_1",simbolo);
         editor.commit();
     }
+
+    public static  String numeroRodadas(Context context){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        return preferences.getString("numeroDeRodadas", "0");
+    }
 }

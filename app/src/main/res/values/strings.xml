@@ -2,7 +2,7 @@
     <string name="app_name">Jogo da Velha App</string>
     <string name="action_settings">Settings</string>
     <string name="jogador1">Jogador 1 - |%1$s|</string>
-    <string name="jogador2">Jogador 2 |%1$s|:</string>
+    <string name="jogador2">Jogador 2 - |%1$s|</string>
     <string name="titulo">JOGO DA IDOSA</string>
     <string name="placar1">0</string>
     <string name="placar2">0</string>
@@ -11,6 +11,11 @@
     <string name="resetar">Zerar o placar</string>
     <string name="tela_inicial">Voltar à tela inicial</string>
     <string name="preferencias">Prefêrencias</string>
+    <string name="velha">Número de Velhas - </string>
+    <string name="empate">0</string>
+    <string name="jogo">Venceu o jogo</string>
+    <string name="numeroJogo">Número de rodadas</string>
+    <string name="rodadas">Venceu o jogo</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

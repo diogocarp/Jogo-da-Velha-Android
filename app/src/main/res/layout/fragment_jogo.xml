@@ -134,6 +134,7 @@
 
         </TableRow>
         <TableRow
+            android:id="@+id/mesa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:weightSum="3">
@@ -160,6 +161,55 @@
                 android:textSize="40sp"></Button>
 
         </TableRow>
+
+
+        <LinearLayout
+            android:id="@+id/linear3"
+            app:layout_constraintTop_toBottomOf="@id/mesa"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/velha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="@string/velha" />
+
+
+        <TextView
+            android:id="@+id/empate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="@string/empate"
+            />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear4"
+            app:layout_constraintTop_toBottomOf="@id/empate"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/numeroJogo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="@string/numeroJogo" />
+
+
+            <TextView
+                android:id="@+id/rodadas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="@string/rodadas"
+                />
+        </LinearLayout>
+
     </TableLayout>
 
 

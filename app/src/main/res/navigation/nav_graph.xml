@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/fragmentInicio"
         android:name="br.senai.sp.cotia.jogodavelhaapp.fragment.FragmentInicio"
-        android:label="fragment_inicio"
-        tools:layout="@layout/fragment_inicio" >
+        android:label="JOGO DA IDOSA"
+        tools:layout="@layout/fragment_inicio">
         <action
             android:id="@+id/action_fragmentInicio_to_fragmentJogo"
             app:destination="@id/fragmentJogo" />
@@ -17,11 +17,14 @@
     <fragment
         android:id="@+id/fragmentJogo"
         android:name="br.senai.sp.cotia.jogodavelhaapp.fragment.FragmentJogo"
-        android:label="fragment_jogo"
-        tools:layout="@layout/fragment_jogo" >
+        android:label="JOGO DA IDOSA"
+        tools:layout="@layout/fragment_jogo">
         <action
             android:id="@+id/action_fragmentJogo_to_prefFragment"
             app:destination="@id/prefFragment" />
+        <action
+            android:id="@+id/action_fragmentJogo_to_fragmentInicio"
+            app:destination="@id/fragmentInicio" />
     </fragment>
     <fragment
         android:id="@+id/prefFragment"

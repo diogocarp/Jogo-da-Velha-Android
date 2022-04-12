@@ -1,10 +1,13 @@
 package br.senai.sp.cotia.jogodavelhaapp.fragment;
 
 
+import android.content.DialogInterface;
 import android.icu.util.Freezable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -44,7 +47,7 @@ public class FragmentJogo extends Fragment {
     private int numJogadas = 0;
 
     // variáveis para o placar
-    private int placarJog1 = 0, placarJog2 = 0;
+    private int placarJog1 = 0, placarJog2 =0, placarEmpate = 0;
     private MenuInflater inflater;
 
 
@@ -153,7 +156,7 @@ public class FragmentJogo extends Fragment {
         for (int i = 0; i < 3; i++) {
             if (tabuleiro[i][0].equals(simbolo) &&
                     tabuleiro[i][1].equals(simbolo) &&
-                    tabuleiro[1][2].equals(simbolo)) {
+                    tabuleiro[i][2].equals(simbolo)) {
                 return true;
 
             }
@@ -190,6 +193,7 @@ public class FragmentJogo extends Fragment {
 
         binding.placar1.setText(placarJog1+"");
         binding.placar2.setText(placarJog2+"");
+        binding.empate.setText(placarEmpate+"");
 
     }
 
@@ -234,16 +238,18 @@ public class FragmentJogo extends Fragment {
         switch (item.getItemId()){
 
             case R.id.menu_resetar:
-                placarJog1 = 0;
-                placarJog2 = 0;
-                resetaTudo();
-                atualizarPlacar();
+                ResetaAlert();
                 break;
 
                 //caso tenha clicado nas preferencias
             case R.id.menu_preferencias:
                 NavHostFragment.findNavController(FragmentJogo.this).
                         navigate(R.id.action_fragmentJogo_to_prefFragment);
+                break;
+
+            case R.id.menu_inicio:
+                NavHostFragment.findNavController(FragmentJogo.this).
+                        navigate(R.id.action_fragmentJogo_to_fragmentInicio);
                 break;
 
 
@@ -295,6 +301,8 @@ public class FragmentJogo extends Fragment {
 
             }
 
+
+
             // atualiza o placar
             atualizarPlacar();
 
@@ -306,7 +314,8 @@ public class FragmentJogo extends Fragment {
 
             // exibe um Toast informando que o jogador venceu
             Toast.makeText(getContext(),R.string.deuvelha, Toast.LENGTH_SHORT).show();
-
+            placarEmpate++;
+            atualizarPlacar();
             //reseta o tabuleiro
             resetaTudo();
 
@@ -321,4 +330,68 @@ public class FragmentJogo extends Fragment {
 
 
     };
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // para "sumir" com a toolbar
+        // pegar uma referencia do tipo AppCompatActivity
+        AppCompatActivity minhaActivity = (AppCompatActivity) getActivity();
+
+        minhaActivity.getSupportActionBar().show();
+        minhaActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+    }
+
+    private AlertDialog alerta;
+
+    private void ResetaAlert() {
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+        builder.setTitle("Alerta");
+
+        builder.setMessage("Deseja reeniciar o jogo?");
+
+        builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+
+                    placarJog1 = 0;
+                    placarJog2 = 0;
+                    placarEmpate = 0;
+                    resetaTudo();
+                    atualizarPlacar();
+
+            }
+        });
+
+        builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+                arg0.cancel();
+            }
+        });
+        alerta = builder.create();
+        alerta.show();
+    }
+
+    private void minimoChance(String rodadas){
+
+        int rod = Integer.parseInt(rodadas);
+        double metade;
+        metade = rod / 2.0;
+        if(placarJog1 > metade){
+
+            Toast.makeText(getContext(),R.string.jogo, Toast.LENGTH_LONG).show();
+
+        }else if(placarJog2 > metade){
+
+            Toast.makeText(getContext(),R.string.jogo, Toast.LENGTH_LONG).show();
+
+        }else{
+
+            atualizaVez();
+        }
+
+    }
+
 }
