@@ -28,6 +28,6 @@ public class PrefsUtil {
 
     public static  String numeroRodadas(Context context){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return preferences.getString("numeroDeRodadas", "0");
+        return preferences.getString("numRodadas", "0");
     }
 }

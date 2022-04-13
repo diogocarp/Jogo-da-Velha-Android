@@ -10,7 +10,12 @@
         android:key="simb_jog_2"
         android:title="Jogador 2"
         android:summary="Escolha o simbolo do jogador 2"
-        />
+        /><androidx.preference.EditTextPreference
+        android:key="numRodadas"
+         android:title="Escolha a quantidade de rodadas"
+
+    />
+
 
 
 

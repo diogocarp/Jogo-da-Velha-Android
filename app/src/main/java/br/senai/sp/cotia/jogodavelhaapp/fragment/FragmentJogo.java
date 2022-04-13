@@ -49,6 +49,7 @@ public class FragmentJogo extends Fragment {
     // variáveis para o placar
     private int placarJog1 = 0, placarJog2 =0, placarEmpate = 0;
     private MenuInflater inflater;
+    private String rodadas;
 
 
     @Override
@@ -101,10 +102,12 @@ public class FragmentJogo extends Fragment {
         // define os simbolos dos jogadores
         simbJog1 = PrefsUtil.getSimboloJog1(getContext());
         simbJog2 = PrefsUtil.getSimboloJog2(getContext());
+        rodadas = PrefsUtil.numeroRodadas(getContext());
 
         // altera o símbolo do jogador no placar
         binding.jogador1.setText(getResources().getString(R.string.jogador1, simbJog1));
         binding.jogador2.setText(getResources().getString(R.string.jogador2, simbJog2));
+        binding.numRodadas.setText(rodadas);
 
         // sorteia quem inicia o jogo
         sorteia();
@@ -301,7 +304,7 @@ public class FragmentJogo extends Fragment {
 
             }
 
-
+            minimoChance(rodadas);
 
             // atualiza o placar
             atualizarPlacar();
@@ -374,9 +377,9 @@ public class FragmentJogo extends Fragment {
         alerta.show();
     }
 
-    private void minimoChance(String rodadas){
+    private void minimoChance(String numRodadas){
 
-        int rod = Integer.parseInt(rodadas);
+        int rod = Integer.parseInt(numRodadas);
         double metade;
         metade = rod / 2.0;
         if(placarJog1 > metade){

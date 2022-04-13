@@ -14,8 +14,8 @@
     <string name="velha">Número de Velhas - </string>
     <string name="empate">0</string>
     <string name="jogo">Venceu o jogo</string>
-    <string name="numeroJogo">Número de rodadas</string>
-    <string name="rodadas">Venceu o jogo</string>
+    <string name="numeroJogo">Número de rodadas -</string>
+    <string name="numRodadas">%1$s</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
